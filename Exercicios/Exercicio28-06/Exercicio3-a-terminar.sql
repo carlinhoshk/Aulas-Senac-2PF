@@ -31,3 +31,15 @@ SELECT Cliente_Cartao.Numero,
 	tipoCartao.Descricao AS TipoCartao
 	FROM Cliente_Cartao INNER JOIN tipoCartao
 	ON tipoCartao.idTipoCartao = Cliente_Cartao.idTipoCartao
+
+
+-- 4. Mostrar o código da conta, data de abertura e o nome e telefone do funcionário que abriu a conta
+
+SELECT Contas.idConta,
+	   Contas.dataAbertura,
+	   Funcionarios.Nome AS 'Nome Funcionario',
+	   Funcionarios.Telefone AS 'Telefone Funcionario'
+	   FROM Funcionarios INNER JOIN Contas
+	   ON Funcionarios.idFuncionario = Contas.idFuncionarioAbertura
+
+-- 5. Mostrar o número da agência, cidade, estado, o código do cliente e data de abertura da conta
